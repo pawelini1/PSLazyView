@@ -22,11 +22,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@class PSLazyViewRenderer;
 
 @interface PSLazyView : UIImageView {
     
 }
 
-
+- (void)performDrawingRect:(CGRect)rect;
+- (UIImage*)renderInImageOfSize:(CGSize)size;
 
 @end

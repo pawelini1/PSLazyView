@@ -22,11 +22,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PSLazyView.h"
 
 #define PS_POINTS_COUNT 150
+#define PS_SUBCLASS PSLazyView
+//#define PS_SUBCLASS UIView
 
-@interface PSSlowView : UIView
+@interface PSSlowView : PS_SUBCLASS
+
+- (id)initWithFrame:(CGRect)frame andIndexString:(NSString*)indexString;
 
 @property(strong) NSArray* allPoints;
+@property(strong) NSString* indexString;
 
 @end

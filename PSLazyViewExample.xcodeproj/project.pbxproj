@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EDBE6142182B00C600E466F2 /* PSLazyViewRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = EDBE6141182B00C600E466F2 /* PSLazyViewRenderer.m */; };
 		EDCC3C1F1829A96900DE7141 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDCC3C1E1829A96900DE7141 /* UIKit.framework */; };
 		EDCC3C211829A96900DE7141 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDCC3C201829A96900DE7141 /* Foundation.framework */; };
 		EDCC3C231829A96900DE7141 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDCC3C221829A96900DE7141 /* CoreGraphics.framework */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EDBE6140182B00C600E466F2 /* PSLazyViewRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLazyViewRenderer.h; sourceTree = "<group>"; };
+		EDBE6141182B00C600E466F2 /* PSLazyViewRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSLazyViewRenderer.m; sourceTree = "<group>"; };
 		EDCC3C1B1829A96900DE7141 /* PSLazyViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSLazyViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDCC3C1E1829A96900DE7141 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EDCC3C201829A96900DE7141 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -129,6 +132,8 @@
 			children = (
 				EDCC3C451829A9AD00DE7141 /* PSLazyView.h */,
 				EDCC3C461829A9AD00DE7141 /* PSLazyView.m */,
+				EDBE6140182B00C600E466F2 /* PSLazyViewRenderer.h */,
+				EDBE6141182B00C600E466F2 /* PSLazyViewRenderer.m */,
 			);
 			path = PSLazyView;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 				EDCC3C471829A9AD00DE7141 /* PSLazyView.m in Sources */,
 				EDCC3C4A1829AC9E00DE7141 /* PSSlowViewController.m in Sources */,
 				EDCC3C4D1829B16D00DE7141 /* PSSlowView.m in Sources */,
+				EDBE6142182B00C600E466F2 /* PSLazyViewRenderer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

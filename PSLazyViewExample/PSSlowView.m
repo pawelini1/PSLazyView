@@ -26,14 +26,26 @@
 @implementation PSSlowView
 
 @synthesize allPoints = _allPoints;
+@synthesize indexString = _indexString;
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)frame andIndexString:(NSString*)indexString
 {
     self = [super initWithFrame:frame];
     if (self) {
         _allPoints = [self generateRandomPoints];
+        _indexString = indexString;
+        
+        UIButton* button = [UIButton buttonWithType:(UIButtonTypeRoundedRect)];
+        button.frame = CGRectInset(self.bounds, 50, 10);
+        [button setTitle:self.indexString forState:(UIControlStateNormal)];
+        [button addTarget:self action:@selector(buttonTapped:) forControlEvents:(UIControlEventTouchUpInside)];
+        [self addSubview:button];
     }
     return self;
+}
+
+-(void)buttonTapped:(id)sender{
+
 }
 
 -(NSArray*)generateRandomPoints{
@@ -46,10 +58,7 @@
     return points;
 }
 
-- (void)drawRect:(CGRect)rect
-{
-    [super drawRect:rect];
-    
+-(void)performDrawingRect:(CGRect)rect{    
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetStrokeColorWithColor(context, [UIColor redColor].CGColor);
     
@@ -67,6 +76,14 @@
     }
     
     CGContextStrokePath(context);
+    
+    CGContextSetStrokeColorWithColor(context, [UIColor greenColor   ].CGColor);
+    [self.indexString drawInRect:self.bounds withFont:[UIFont systemFontOfSize:15] lineBreakMode:(NSLineBreakByWordWrapping) alignment:(NSTextAlignmentCenter)];
+}
+
+-(void)drawRect:(CGRect)rect{
+    [super drawRect:rect];
+    [self performDrawingRect:rect];
 }
 
 @end

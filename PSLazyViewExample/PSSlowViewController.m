@@ -38,7 +38,7 @@
 	
     CGFloat offsetY = .0f;
     for (int i = 0; i < PS_VIEWS_COUNT; i++) {
-        PSSlowView* slowView = [[PSSlowView alloc] initWithFrame:CGRectMake(0, offsetY, CGRectGetWidth(self.scrollView.frame), PS_VIEW_HEIGHT)];
+        PSSlowView* slowView = [[PSSlowView alloc] initWithFrame:CGRectMake(0, offsetY, CGRectGetWidth(self.scrollView.frame), PS_VIEW_HEIGHT) andIndexString:[NSString stringWithFormat:@"%d", i]];
         offsetY += CGRectGetHeight(slowView.frame);
         [self.scrollView addSubview:slowView];
     }

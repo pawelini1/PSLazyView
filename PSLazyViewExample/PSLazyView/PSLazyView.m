@@ -22,6 +22,7 @@
 //
 
 #import "PSLazyView.h"
+#import "PSLazyViewRenderer.h"
 
 @implementation PSLazyView
 
@@ -29,18 +30,35 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        [self setContentMode:(UIViewContentModeTopLeft)];
+        [self setUserInteractionEnabled:YES];
     }
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
+-(void)setNeedsDisplay{
+    [super setNeedsDisplay];
+    [[PSLazyViewRenderer sharedInstance] renderView:self];
 }
-*/
+
+-(void)setNeedsDisplayInRect:(CGRect)rect{
+    [super setNeedsDisplayInRect:rect];
+}
+
+-(UIImage*)renderInImageOfSize:(CGSize)size {
+    UIGraphicsBeginImageContextWithOptions(size, NO, 0);
+    [self performDrawingRect:CGRectMake(.0f, .0f, size.width, size.height)];
+    UIImage* image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
+-(void)performDrawingRect:(CGRect)rect{
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)] userInfo:nil];
+}
+
+-(void)drawRect:(CGRect)rect{
+    // just in case that subclass call [super drawRect:rect];
+}
 
 @end
